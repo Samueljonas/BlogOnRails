@@ -25,17 +25,7 @@
 </head>
 
 <body>
-    <div class="bg-primary text-white text-center mb-4 p-4">
-        <%= link_to root_path , class: "text-white" do %>
-        <h1 class='display-5'> Blog Maino</h1>
-        <%end%>
-        <p class="lead">esse é a home do blog </p>
-    </div>
-    <div class="container">
-        <h1><%=yield%></h1>
-    </div>
-    <footer class="bg-primary text-white text-center mt-5 p-3"> Copyright Samuel Jonas <%= Date.current.year%>
-    </footer>
+    <%= yield %>
 </body>
 
 </html>

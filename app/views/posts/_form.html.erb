@@ -1,0 +1,11 @@
+<%= from_with model: @post, local: true do |f|%>
+<p>
+    <%= f.label :title, "Título:" %><br>
+    <%= f.text_field :title%>
+</p>
+<p>
+    <%= f.label :body, "Conteúdo: " %><br>
+    <%= f.text_area :body %>
+</p>
+<%= f.submit %>
+<%end%>

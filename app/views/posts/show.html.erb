@@ -1,2 +1,18 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<!-View para Mostrar um Post com Comentários ->
+    <h1><%= @post.title %></h1>
+
+    <h2> Comentários</h2>
+    <% @post.comments.each do |comment| %>
+    <p><%= comment.body %></p>
+    <%= link_to 'Excluir', post_comment_path(@post,comment), method: :delete, data: {confirm: 'Você tem certeza?'}%>
+    <%end%>
+
+    <h3> Adicionar comentário</h3>
+    <%= from_with model: [@post,@comment], local: true do |f| %>
+    <p>
+        <%= f.label :body, 'Comentário:' %><br>
+        <%= f.text_area :body %>
+    </p>
+    <%= f.submit 'Enviar' %>
+    <%end%>
+    <%= link_to 'Voltar', post_path %>
