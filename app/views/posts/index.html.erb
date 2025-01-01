@@ -1,2 +1,18 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<!-View para Listar Posts->
+
+    <h1 class="text-center bg-primary mb-4 p-4">Blog Maino</h1>
+    <p class="text-center"> Posts mais recentes: </p>
+    <div class="container mt-5">
+        <% @posts.each do |post| %>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title"><%= link_to post.title, post %></h2>
+                <p class="card-text"><%= truncate(post.body, lenght: 150) %></p>
+                <%= link_to 'Leia mais', post, class: 'btn btn-primary'%>
+            </div>
+        </div>
+        <%end%>
+
+        <%= will_paginate @posts, renderer: BootstrapPagination::Rails if defined?(BootstrapPagination::Rails) %>
+        <%= link_to 'Novo Post', new_post_path %>
+    </div>
