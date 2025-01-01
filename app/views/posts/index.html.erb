@@ -1,15 +1,15 @@
 <!-View para Listar Posts->
     <div class="bg-light">
-        <h1 class="text-center bg-primary mb-4 p-4">Blog Maino</h1>
+        <h1 class="text-center bg-info mb-4 p-4">Blog Maino</h1>
 
-        <div class="container mt-5">
-            <p class="text-center bg-info"> Posts mais recentes: </p>
+        <div class="container mt-5 bg-light">
+            <p class="text-center bg-info text-dark"> Posts mais recentes: </p>
             <% @posts.each do |post| %>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h2 class="card-title"><%= link_to post.title, post %></h2>
+            <div class="card mb-3 ">
+                <div class="card-body text-dark">
+                    <h2 class="card-title text-dark"><%= link_to post.title, post, class:"text-dark" %></h2>
                     <p class="card-text"><%= truncate(post.body, lenght: 150) %></p>
-                    <%= link_to 'Leia mais', post, class: 'btn btn-primary'%>
+                    <%= link_to 'Leia mais', post, class: 'btn btn-info text-dark'%>
                 </div>
             </div>
             <%end%>
