@@ -82,6 +82,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
+    bootstrap-will_paginate (1.0.0)
+      will_paginate
     brakeman (7.0.0)
       racc
     builder (3.3.0)
@@ -326,6 +328,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap-will_paginate
   brakeman
   cssbundling-rails
   debug
