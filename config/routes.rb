@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
+  get "users/index"
+  get "users/show"
+  get "users/edit"
+  get "users/update"
+  get "users/destroy"
+  devise_for :users
+
+  # Routes for CRUD users
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
+
+  # home page users
+  root to: 'users#index'
   root "pages#home"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
