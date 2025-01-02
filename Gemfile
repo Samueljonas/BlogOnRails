@@ -23,6 +23,7 @@ gem 'devise'
 #Gem for paginate
 gem 'will_paginate', '~> 3.3'
 gem 'bootstrap-will_paginate'
+gem 'devise-i18n'
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

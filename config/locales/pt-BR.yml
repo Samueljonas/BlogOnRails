@@ -27,5 +27,12 @@
 #       "yes": yup
 #       enabled: "ON"
 
-en:
-  hello: "Hello world"
+pt-BR:
+  hello: "Olá Mundo"
+  devise:
+    sessions:
+      signed_in: "Login efetuado com sucesso."
+      signed_out: "Logout efetuado com sucesso."
+    registrations:
+      signed_up: "Cadastro realizado com sucesso."
+      signed_up_but_unconfirmed: "Cadastro realizado. Verifique seu e-mail para confirmar sua conta."
