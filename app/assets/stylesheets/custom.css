@@ -1,0 +1,71 @@
+/* app/assets/stylesheets/custom.css */
+body {
+  background-color: #f8f9fa; /* Cinza claro */
+}
+
+h1 {
+  color: #0000008a;
+}
+
+.navbar {
+  background-color: #1ccce8; /* Azul claro */
+}
+
+.navbar a {
+  color: rgb(2, 2, 2) !important;
+}
+
+.navbar a:hover {
+  color: #343e48a1 !important; /* Cor clara ao passar o mouse */
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  max-width: 700px; /* Define uma largura máxima */
+  max-height: 700px;
+  margin: 0 auto; /* Centraliza o card */
+}
+
+.card-body {
+  background-color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-primary:hover {
+  background-color: #138496;
+  border-color: #138496;
+}
+
+form {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.navbar .fa-plus {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.navbar .fa-plus:hover {
+  color: #000000;
+}
+.nav-link.fs-4.fw-bold {
+  font-size: 1.5rem;
+  color: #050606 !important;
+  transition: transform 0.2s;
+}
+
+.nav-link.fs-4.fw-bold:hover {
+  transform: scale(1.2);
+  color: #010101 !important;
+}

@@ -1,11 +1,9 @@
 <!-View para Listar Posts->
     <div class="bg-light">
-        <h1 class="text-center bg-info mb-4 p-4">Blog Maino</h1>
-
         <div class="container mt-5 bg-light">
-            <p class="text-center bg-info text-dark"> Posts mais recentes: </p>
+            <p class="text-center bg-light text-dark mb-2 p-4"> Posts mais recentes: </p>
             <% @posts.each do |post| %>
-            <div class="card mb-3 ">
+            <div class="card mb-3 h-50 ">
                 <div class="card-body text-dark">
                     <h2 class="card-title text-dark"><%= link_to post.title, post, class:"text-dark" %></h2>
                     <p class="card-text"><%= truncate(post.body, lenght: 150) %></p>
@@ -15,6 +13,6 @@
             <%end%>
 
             <%= will_paginate @posts, renderer: BootstrapPagination::Rails if defined?(BootstrapPagination::Rails) %>
-            <%= link_to 'Novo Post', new_post_path %>
+
         </div>
     </div>
