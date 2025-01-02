@@ -1,18 +1,20 @@
-<!-View para Mostrar um Post com Comentários ->
+<div class="container mt-5">
     <h1><%= @post.title %></h1>
+    <p><%= @post.body %></p>
+    <p><strong>Autor:</strong> <%= @post.user.email %></p>
+    <hr>
 
-    <h2> Comentários</h2>
-    <% @post.comments.each do |comment| %>
-    <p><%= comment.body %></p>
-    <%= link_to 'Excluir', post_comment_path(@post,comment), method: :delete, data: {confirm: 'Você tem certeza?'}%>
-    <%end%>
+    <h3>Comentários</h3>
+    <%= render @comments %>
 
-    <h3> Adicionar comentário</h3>
-    <%= from_with model: [@post,@comment], local: true do |f| %>
-    <p>
-        <%= f.label :body, 'Comentário:' %><br>
-        <%= f.text_area :body %>
-    </p>
-    <%= f.submit 'Enviar' %>
-    <%end%>
-    <%= link_to 'Voltar', post_path %>
+    <h4>Adicionar Comentário</h4>
+    <%= form_with(model: [@post, @comment], local: true) do |form| %>
+    <div class="form-group">
+        <%= form.label :body, "Seu Comentário" %>
+        <%= form.text_area :body, class: "form-control", rows: 3 %>
+    </div>
+    <div class="form-group mt-3">
+        <%= form.submit "Enviar", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+</div>
