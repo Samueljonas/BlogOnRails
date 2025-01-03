@@ -304,6 +304,8 @@ Devise.setup do |config|
   # Note: These might become the new default in future versions of Devise.
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
+  # Configuração para redirecionar após logout
+  config.sign_out_via = :delete
 
   # ==> Configuration for :registerable
 

@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update, :destroy]
 
   # Página inicial (root)
-  root to: "posts#index"
+  root"posts#index"
 
   # Rotas para posts com comentários aninhados
   resources :posts do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
 
   # Health check (opcional)
