@@ -17,7 +17,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    puts "Requisição chegou no método CREATE com parâmetros: #{post_params.inspect}"
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to @post, notice: "Post criado com sucesso!"
@@ -26,8 +25,6 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
-  
 
   def edit; end
 
