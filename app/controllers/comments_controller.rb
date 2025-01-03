@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
 
     # Associa o comentário ao usuário logado, se houver
     @comment.user = current_user if user_signed_in?
+    @comment.author = "Anonymous" if @comment.author.blank?
 
     # Salva o comentário
     if @comment.save
