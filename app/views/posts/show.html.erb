@@ -1,14 +1,14 @@
 <div class="container mt-5">
     <h1 class="text-dark"><%= @post.title %></h1>
     <p><%= @post.body %></p>
-    <p><strong>Autor:</strong> <%= @post.author %></p>
+    <p><strong>Author:</strong> <%= @post.author %></p>
     <hr>
-    <h3>Comentários:</h3>
+    <h3>Comments:</h3>
     <% if @post.Comments.any? %>
     <ul>
         <% @post.Comments.each do |comment| %>
         <li>
-            <p><strong><%= comment.author || "Anônimo" %>:</strong></p>
+            <p><strong><%= comment.author || "Anonymous" %>:</strong></p>
             <p><%= comment.body %></p>
         </li>
         <% end %>
@@ -17,21 +17,22 @@
     <p>Não há comentários ainda. Seja o primeiro a comentar!</p>
     <% end %>
 
-    <h4>Adicionar Comentário:</h4>
+    <h4>Add comment:</h4>
     <%= form_with model: [@post, Comment.new], local: true do |form| %>
     <% unless user_signed_in? %>
     <div class="form-group">
-        <%= form.label :author, "Seu nome (opcional)" %>
+        <%= form.label :author, "Your name(optional)" %>
         <%= form.text_field :author, class: "form-control" %>
     </div>
     <% end %>
 
     <div class="form-group">
-        <%= form.label :body, "Escreva seu comentário" %>
+        <%= form.label :body, "Write your comment:" %>
         <%= form.text_area :body, class: "form-control", rows: 3 %>
     </div>
 
     <div class="form-group mt-3">
-        <%= form.submit "Comentar", class: "btn btn-primary" %>
+        <%= form.submit "Comment", class: "btn btn-primary" %>
+        <%= link_to "Back", posts_path, class: "btn btn-secondary" %>
     </div>
     <% end %>

@@ -1,3 +1,16 @@
-<h1> <%=action_name == 'new' ? 'Novo Post' : 'Editar Post' %></h1>
-<%= render 'form' %>
-<%= link_to 'Voltar', posts_path %>
+<h1>Edit post</h1>
+
+<%= form_with(model: @post, local: true) do |form| %>
+<div class="mb-3">
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title, class: "form-control" %>
+</div>
+
+<div class="mb-3">
+    <%= form.label :body, "Content" %>
+    <%= form.text_area :body, rows: 5, class: "form-control" %>
+</div>
+
+<%= form.submit "Update Post", class: "btn btn-primary" %>
+<%= link_to "Back", posts_path, class: "btn btn-secondary" %>
+<% end %>
