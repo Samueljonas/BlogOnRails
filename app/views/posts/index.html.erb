@@ -1,7 +1,7 @@
 <!-View para Listar Posts->
     <div class="bg-light">
         <div class="container mt-5 bg-light">
-            <p class="text-center bg-light text-dark mb-2 p-4"> Posts mais recentes: </p>
+            <p class="text-center bg-light text-dark mt-2 p-2"> Posts mais recentes: </p>
             <% @posts.each do |post| %>
             <div class="card mb-3 h-50 ">
                 <div class="card-body text-dark">
@@ -12,7 +12,12 @@
             </div>
             <%end%>
 
-            <%= will_paginate @posts, renderer: BootstrapPagination::Rails if defined?(BootstrapPagination::Rails) %>
+            <div class="d-flex justify-content-center mt-4">
+                <%= will_paginate @posts, renderer: BootstrapPagination::Rails, class: 'pagination' if defined?(BootstrapPagination::Rails) %>
+            </div>
+
+            <%= will_paginate @posts, class: 'pagination justify-content-center' %>
+
 
         </div>
     </div>

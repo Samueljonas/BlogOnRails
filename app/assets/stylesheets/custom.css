@@ -69,3 +69,20 @@ form {
   transform: scale(1.2);
   color: #010101 !important;
 }
+.pagination {
+  font-size: 1.2rem;
+}
+
+.pagination a,
+.pagination span {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.pagination .active {
+  background-color: #b8b8b8;
+  color: #fff;
+  border-color: #007bff;
+}
