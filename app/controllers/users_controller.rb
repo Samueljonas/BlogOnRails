@@ -39,7 +39,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
   end
-  
+
 
   # Permite apenas os parâmetros especificados para segurança
   def user_params
