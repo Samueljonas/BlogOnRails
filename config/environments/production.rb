@@ -70,7 +70,7 @@ Rails.application.configure do
   }
 
   config.action_mailer.default_url_options = { host: 'seu-dominio.com' } #lembrar de substituir pelo dominio
-end
+
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   # config.action_mailer.smtp_settings = {
