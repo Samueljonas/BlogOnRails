@@ -1,2 +1,7 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
-@import "custom.css";
+@import "javascript/stylesheets/custom.css";
+/* app/assets/stylesheets/application.css */
+
+/*
+ *= require custom
+ */
