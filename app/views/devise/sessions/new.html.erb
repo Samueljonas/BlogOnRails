@@ -1,5 +1,18 @@
 <h2>Log in</h2>
 
+<!-- Exibir mensagens de erro -->
+<% if flash[:alert].present? %>
+<div class="alert alert-danger">
+    <%= flash[:alert] %>
+</div>
+<% end %>
+
+<% if flash[:notice].present? %>
+<div class="alert alert-success">
+    <%= flash[:notice] %>
+</div>
+<% end %>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="field">
     <%= f.label :email %><br />
