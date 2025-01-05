@@ -68,6 +68,8 @@ Rails.application.configure do
     password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true,
+    open_timeout: 30, # Tempo de abertura da conexão
+    read_timeout: 60  # Tempo de leitura da resposta
   }
 
 
