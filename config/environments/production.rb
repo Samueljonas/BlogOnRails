@@ -66,7 +66,9 @@ Rails.application.configure do
     user_name:            ENV['GMAIL_USERNAME'],
     password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    open_timeout: 5,        
+    read_timeout: 5 
   }
 
   config.action_mailer.default_url_options = { host: 'https://blog-maino-6vzu.onrender.com' } #lembrar de substituir pelo dominio
