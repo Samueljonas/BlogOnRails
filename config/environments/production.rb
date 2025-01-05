@@ -42,14 +42,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
-    port: 587,
-    domain: "https://blog-maino-6vzu.onrender.com",
-    user_name: "apikey", 
-    password: "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",
-    authentication: "plain",
-    enable_starttls_auto: true
-  }
+      address: "smtp.sendgrid.net",
+      port: 587,
+      domain: "https://blog-maino-6vzu.onrender.com",
+      user_name: "apikey", 
+      password: ENV['GMAIL_PASSWORD'],
+      authentication: "plain",
+      enable_starttls_auto: true
+    }
+    
   
 
 
