@@ -69,6 +69,7 @@ Rails.application.configure do
     authentication:       'plain',
     enable_starttls_auto: true,
     tls: true
+    openssl_verify_mode: 'none'
   }
 
 
