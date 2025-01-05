@@ -27,6 +27,7 @@ gem 'devise-i18n'
 gem 'rails-ujs', '~> 0.1.0'
 gem 'letter_opener', group: :development
 gem "dotenv-rails", groups: [:development, :test]
+gem 'mail'
 
 
 

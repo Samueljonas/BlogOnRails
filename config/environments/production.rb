@@ -62,14 +62,14 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'seu-dominio.com', 
+    domain:               'https://blog-maino-6vzu.onrender.com', 
     user_name:            ENV['GMAIL_USERNAME'],
     password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { host: 'seu-dominio.com' } #lembrar de substituir pelo dominio
+  config.action_mailer.default_url_options = { host: 'https://blog-maino-6vzu.onrender.com' } #lembrar de substituir pelo dominio
 
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
