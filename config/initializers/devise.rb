@@ -3,17 +3,16 @@ Devise.setup do |config|
   config.mailer_sender = ENV['GMAIL_USERNAME']
   config.mailer = 'Devise::Mailer'
 
-
-  config.smtp_settings = {
-    address:              'smtp.gmail.com',  # Servidor SMTP do Gmail
-    port:                 587,               # Porta para TLS
-    domain:               'gmail.com',       # Domínio do Gmail
-    user_name:            ENV['GMAIL_USERNAME'],
-    password:             ENV['GMAIL_PASSWORD'],  # Sua senha ou senha de app do Gmail
-    authentication:       'plain',           # Método de autenticação
-    enable_starttls_auto: true,              # Ativa TLS
-  }
-
+  # Remova esta parte, pois a configuração do SMTP deve ser feita no ActionMailer
+  # config.smtp_settings = {
+  #   address:              'smtp.gmail.com',  # Servidor SMTP do Gmail
+  #   port:                 587,               # Porta para TLS
+  #   domain:               'gmail.com',       # Domínio do Gmail
+  #   user_name:            ENV['GMAIL_USERNAME'],
+  #   password:             ENV['GMAIL_PASSWORD'],  # Sua senha ou senha de app do Gmail
+  #   authentication:       'plain',           # Método de autenticação
+  #   enable_starttls_auto: true,              # Ativa TLS
+  # }
   
   config.stretches = Rails.env.test? ? 1 : 12
   config.password_length = 6..128
