@@ -61,7 +61,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://blog-maino-6vzu.onrender.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'pro.turbo-smtp.com',
+    address:              'smtp.gmail.com',
     port:                 465,
     domain:               'gmail.com',
     user_name:            ENV['GMAIL_USERNAME'],
