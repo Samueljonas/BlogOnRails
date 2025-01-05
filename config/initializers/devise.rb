@@ -1,39 +1,26 @@
 Devise.setup do |config|
-  # Configure the e-mail sender
-  config.mailer_sender = 'noreply@example.com'
-
-  # Configure the case of emails for devise (this is just an example, adapt to your needs)
-  config.secret_key = 'your-secret-key'
-
-  # ==> Mailer Configuration
-  # Configure the default URL options for the mailer
+  # Configurações do Mailer
+  config.mailer_sender = ENV['GMAIL_USERNAME']
   config.mailer = 'Devise::Mailer'
-  config.mailer_sender = 'noreply@example.com'
-  
-  # ==> SMTP Configuration (this is crucial for sending emails)
-  config.mailer = 'Devise::Mailer'
-  
-  # Here, we setup the SMTP server for the e-mail functionality. Adjust for your own SMTP server.
-  config.mailer_sender = 'noreply@example.com'
+
 
   config.smtp_settings = {
-    address:              'smtp.example.com',  # Replace with your SMTP server address
-    port:                 587,                 # Usually 587 for TLS or 465 for SSL
-    domain:               'example.com',       # Your domain or your provider's domain
-    user_name:            'ENV['GMAIL_USERNAME']',  # Your email address for SMTP
-    password:             'ENV['GMAIL_PASSWORD']',     # Your email password or an app password
-    authentication:       'plain',             # The authentication method, use 'login' or 'plain'
-    enable_starttls_auto: true,                # Enable TLS
+    address:              'smtp.gmail.com',  # Servidor SMTP do Gmail
+    port:                 587,               # Porta para TLS
+    domain:               'gmail.com',       # Domínio do Gmail
+    user_name:            ENV['GMAIL_USERNAME'],
+    password:             ENV['GMAIL_PASSWORD'],  # Sua senha ou senha de app do Gmail
+    authentication:       'plain',           # Método de autenticação
+    enable_starttls_auto: true,              # Ativa TLS
   }
 
-  # ==> Other common Devise configurations
-
-  # ==> Password recovery configuration
-  # Enable/disable sending emails for password reset
-  config.reconfirmable = true
-  config.reset_password_keys = [ :email ]
+  
+  config.stretches = Rails.env.test? ? 1 : 12
+  config.password_length = 6..128
+  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
-
-  # ==> Session configuration
-  config.timeout_in = 30.minutes
+  config.reconfirmable = true
+  config.sign_out_via = :delete
+  config.responder.error_status = :unprocessable_entity
+  config.responder.redirect_status = :see_other
 end

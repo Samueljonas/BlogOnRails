@@ -58,11 +58,12 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
+  config.action_mailer.default_url_options = { host: 'https://blog-maino-6vzu.onrender.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'https://blog-maino-6vzu.onrender.com', 
+    domain:               'gmail.com', 
     user_name:            ENV['GMAIL_USERNAME'],
     password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
@@ -71,7 +72,6 @@ Rails.application.configure do
     read_timeout: 5 
   }
 
-  config.action_mailer.default_url_options = { host: 'https://blog-maino-6vzu.onrender.com' } #lembrar de substituir pelo dominio
 
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
