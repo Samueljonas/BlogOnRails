@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Rotas para autenticação de usuários
-  devise_for :users, controllers:{registrations: 'users/registrations'}
+  devise_for :users, controllers:{registrations: 'users/registrations', passwords: 'devise/passwords'}
   resources :posts
   # Rotas para gerenciamento de usuários
   resources :users, only: [:index, :show, :edit, :update, :destroy]
