@@ -112,7 +112,7 @@ Obrigado por conferir o Blog Maino! Se você tiver dúvidas ou sugestões, sinta
 
 ### 📫 Contato
 
-- **Email**: [seu-email@example.com](mailto:seu-email@example.com)
-- **GitHub**: [seu-usuario](https://github.com/seu-usuario)
+- **Email**: [samueljonascali@gmail.com](mailto:samueljonascali@gmail.com)
+- **GitHub**: [Samueljonas](https://github.com/Samueljonas)
 
 ---
