@@ -29,8 +29,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_153917) do
     t.text "description"
     t.string "author"
     t.text "body"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,5 +47,4 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_153917) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "posts", "users"
 end
