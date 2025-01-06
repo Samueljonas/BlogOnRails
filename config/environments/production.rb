@@ -38,18 +38,17 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # Set localhost to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = "https://blog-maino-6vzu.onrender.com"
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address: "smtp.sendgrid.net",
+      address: "smtp.gmail.coms",
       port: 587,
-      domain: "https://blog-maino-6vzu.onrender.com",
-      user_name: "apikey",
-      password: ENV['SENDGRID_API_KEY'],
+      domain: "gmail.com",
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV['GMAIL_PASSWORD'],
       authentication: :plain,
       enable_starttls_auto: true
     }
+    config.action_mailer.default_url_options = { host: "https://blog-maino-6vzu.onrender.com"}
 
 
   # Print deprecation notices to the Rails logger.
