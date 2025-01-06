@@ -9,8 +9,6 @@
                 <p class="card-text"><%= truncate(post.body, length: 150) %></p>
                 <p><strong>Author:</strong> <%= post.user&.name || "Anonymous" %></p>
                 <%= link_to 'Read more', post, class: 'btn btn-info text-dark'%>
-
-                <!-- Botões "Editar" e "Apagar" visíveis apenas para o autor do post -->
                 <% if post.user == current_user %>
                 <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %>
                 <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'btn btn-danger' %>

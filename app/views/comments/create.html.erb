@@ -1,36 +1,27 @@
 <div class="container mt-5">
-    <!-- Título do Post -->
     <h1 class="text-dark"><%= @post.title %></h1>
-
-    <!-- Corpo do Post -->
     <p><%= @post.body %></p>
-
-    <!-- Autor do Post -->
     <p>
-        <strong>Autor:</strong>
-        <%= @post.author.present? ? @post.author : "Anônimo" %>
+        <strong>Author:</strong>
+        <%= @post.author.present? ? @post.author : "Anonymous" %>
     </p>
-
     <hr>
-
-    <!-- Seção de Comentários -->
-    <h3>Comentários:</h3>
+    <h3>Comments:</h3>
     <% if @post.Comments.any? %>
     <ul>
         <% @post.Comments.each do |comment| %>
         <li>
-            <p><strong><%= comment.author.present? ? comment.author : "Anônimo" %>:</strong></p>
+            <p><strong><%= comment.author.present? ? comment.author : "Anonymous" %>:</strong></p>
             <p><%= comment.body %></p>
         </li>
         <% end %>
     </ul>
     <% else %>
-    <p>Não há comentários ainda. Seja o primeiro a comentar!</p>
+    <p>There are no comments yet. Be the first to comment!</p>
     <% end %>
 
     <hr>
 
-    <!-- Formulário para Adicionar Comentário -->
     <h4>Add comment:</h4>
     <%= form_with model: [@post, Comment.new], local: true do |form| %>
 
