@@ -4,9 +4,9 @@
     <p><strong>Author:</strong> <%= @post.user.name %></p>
     <hr>
     <h3>Comments:</h3>
-    <% if @post.Comments.any? %>
+    <% if @post.comments.any? %>
     <ul>
-        <% @post.Comments.each do |comment| %>
+        <% @post.comments.each do |comment| %>
         <li>
             <p><strong><%= comment.user&.name || "Anonymous" %>:</strong></p>
             <p><%= comment.body %></p>

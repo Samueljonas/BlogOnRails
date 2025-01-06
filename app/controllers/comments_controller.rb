@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def create
     # Constrói o comentário associado ao post
-    @comment = @post.Comments.build(comment_params)
+    @comment = @post.comments.build(comment_params)
 
     # Associa o comentário ao usuário logado, se houver
     @comment.user = current_user if user_signed_in?
