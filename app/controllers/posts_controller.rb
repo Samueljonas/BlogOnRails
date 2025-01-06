@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.Comments # Certifique-se de que o modelo Post tem has_many :comments
+    @comments = @post.Comments 
     @comment = Comment.new
   end
 

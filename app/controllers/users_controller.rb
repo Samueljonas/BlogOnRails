@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authorize_admin, except: [:index, :show]
 
-  # Lista todos os usuários (apenas para admins)
+# Lista todos os usuários (apenas para admins)
   def index
     @users = User.all
   end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # Atualiza os dados do usuário
+# Atualiza os dados do usuário
   def update
     if @user.update(user_params)
       redirect_to @user, notice: "User updated!"
