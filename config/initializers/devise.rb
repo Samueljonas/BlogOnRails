@@ -8,6 +8,7 @@ Devise.setup do |config|
   # Configuração do remetente dos e-mails do Devise
   # Certifique-se de definir `DEVISE_MAILER_SENDER` nas variáveis de ambiente
   config.mailer_sender = ENV.fetch('DEVISE_MAILER_SENDER', 'noreply@yourdomain.com')
+  config.mailer = 'CustomDeviseMailer'
 
   # Configuração do ORM (Active Record, por padrão)
   require 'devise/orm/active_record'
