@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+module Users
+  class RegistrationsController < Devise::RegistrationsController
   protected
 
   # Redireciona após atualizar
@@ -8,3 +9,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
     root_path
   end
 end
+
+
