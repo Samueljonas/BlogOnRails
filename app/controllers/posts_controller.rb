@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to @post, notice: "Post criado com sucesso!"
+      redirect_to @post, notice: I18n.t("posts.success")
     else
       flash.now[:alert] = "Erro ao criar o post: #{@post.errors.full_messages.join(', ')}"
       render :new, status: :unprocessable_entity
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: "Post updated successfully"
+      redirect_to @post, notice: I18n.t("posts.update_success")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path, notice: "Post deleted successfully"
+    redirect_to posts_path, notice: I18n.t("posts.destroy")
   end
 
   private
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   def authorize_user!
     return if @post.user == current_user
 
-    redirect_to posts_path, alert: "You don't have permission to perform this action"
+    redirect_to posts_path, alert: I18n.t("posts.authorize")
   end
 
   def post_params

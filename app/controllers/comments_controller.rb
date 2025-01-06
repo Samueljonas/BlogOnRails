@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
 
     # Salva o comentário
     if @comment.save
-      redirect_to @post, notice: "Comentário publicado com sucesso!"
+      redirect_to @post, notice: I18n.t("comments.success")
     else
-      redirect_to @post, alert: "Erro ao publicar o comentário. Tente novamente."
+      redirect_to @post, alert: I18n.t("comments.error")
     end
   end
 

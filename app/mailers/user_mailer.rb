@@ -3,6 +3,6 @@
 class UserMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
-    mail(to: @user.email, subject: "Welcome to Blog Mainô!")
+    mail(to: @user.email, subject: I18n.t("mailer.user_welcome_mensage"))
   end
 end

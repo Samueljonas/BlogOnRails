@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   # Atualiza os dados do usuário
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: "User updated!"
+      redirect_to @user, notice: I18n.t("user.update")
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   # Exclui um usuário
   def destroy
     @user.destroy
-    redirect_to users_path, notice: "User excluded!"
+    redirect_to users_path, notice: I18n.t("user.destroy")
   end
 
   private
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
 
   # Apenas administradores podem acessar certas ações
   def authorize_admin
-    redirect_to root_path, alert: "Unauthorized access!" unless current_user.admin?
+    redirect_to root_path, alert: I18n.t("user.authorized") unless current_user.admin?
   end
 end
