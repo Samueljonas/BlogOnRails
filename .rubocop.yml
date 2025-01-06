@@ -1,0 +1,18 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.3.6
+  TargetRailsVersion: 8.0.1
+  NewCops: enable
+
+  Exclude:
+    - ".git/**/*"
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "vendor/**/*"
+    - "node_modulos/**/*"
+Style/Documentation:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

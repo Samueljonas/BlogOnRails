@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
@@ -40,15 +42,15 @@ Rails.application.configure do
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address: "smtp.gmail.com",
-      port: 587,
-      domain: "gmail.com",
-      user_name: ENV["GMAIL_USERNAME"],
-      password: ENV['GMAIL_PASSWORD'],
-      authentication: :plain,
-      enable_starttls_auto: true
-    }
-    config.action_mailer.default_url_options = { host: "https://blog-maino-6vzu.onrender.com"}
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    user_name: ENV.fetch("GMAIL_USERNAME", nil),
+    password: ENV.fetch("GMAIL_PASSWORD", nil),
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+  config.action_mailer.default_url_options = { host: "https://blog-maino-6vzu.onrender.com" }
 
 
   # Print deprecation notices to the Rails logger.
