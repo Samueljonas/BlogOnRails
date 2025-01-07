@@ -200,7 +200,7 @@ textarea:focus {
 
 .pagination a:hover,
 .pagination .active {
-  background-color: var(--primary-color);
+  background-color: rgba(183, 186, 223, 0.855);
   color: white;
   border-color: var(--primary-color);
 }
