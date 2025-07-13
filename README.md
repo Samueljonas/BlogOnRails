@@ -103,6 +103,11 @@ db/                    # Migrações e seeds do banco de dados
 
 ---
 
+## 🚀 Link do projeto
+Atualmente o projeto está hospedado na plataforma da Render. Link: blog-maino-6vzu.onrender.com
+
+---
+
 ## ✨ Agradecimentos
 
 Obrigado por conferir o Blog Maino! Se você tiver dúvidas ou sugestões, sinta-se à vontade para entrar em contato. 😊
