@@ -37,8 +37,7 @@ Um blog desenvolvido com Ruby on Rails, permitindo que usuários criem, comentem
 1. **Clone o repositório**:
 
    ```bash
-   git clone https://github.com/seu-usuario/blog-maino.git
-   cd blog-maino
+   git clone https://github.com/Samueljonas/BlogOnRails.git
 
    ```
 
